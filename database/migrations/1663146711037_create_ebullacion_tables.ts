@@ -1,16 +1,12 @@
 import BaseSchema from '@ioc:Adonis/Lucid/Schema'
 
 export default class extends BaseSchema {
-  protected tableName = 'puntosdefusion'
+  protected tableName = 'puntosdeebullacion'
 
   public async up() {
     this.schema.createTable(this.tableName, (table) => {
       table.increments('id').primary()
-      table
-        .integer('punto_de_fusion_en_grados_id')
-        .unsigned()
-        .references('punto_de_fusion_id')
-        .inTable('elementos')
+      table.integer('').unsigned().references('punto_de_ebullicion_id').inTable('elementos')
       table.float('celsius')
       table.float('farenheit')
       table.float('kelvin')
